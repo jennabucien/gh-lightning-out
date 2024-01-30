@@ -1,1 +1,31 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Hello, This is a Lightning Out App in Action!</h1>
+
+    <div id="lightningout"></div>
+
+    <script src="https://trialorgfarmforu138.test9.my.pc-rnd.salesforce.com/lightning/lightning.out.js"></script>
+    <script>
+      $Lightning.use(
+        'c:auraDepApp', // name of the Lightning app
+        function () {
+          // Callback once framework and app loaded
+          $Lightning.createComponent(
+            'c:myComponent', // top-level component of your app
+            {}, // attributes to set on the component when created
+            'lightningout', // the DOM location to insert the component
+            function (cmp) {
+              console.log('The component was made!');
+            }
+          );
+        },
+        'https://trialorgfarmforu138.test9.my.pc-rnd.salesforce-sites.com' // Site endpoint
+      );
+    </script>
+  </body>
+</html>
