@@ -9,22 +9,23 @@
 
     <div id="lightningout"></div>
 
-    <script src="https://trialorgfarmforu138.test9.my.pc-rnd.salesforce.com/lightning/lightning.out.js">
-      $Lightning.use(
-        'c:auraDepApp', // name of the Lightning app
-        function () {
-          // Callback once framework and app loaded
-          $Lightning.createComponent(
-            'c:newTopLevel', // top-level component of your app
-            {}, // attributes to set on the component when created
-            'lightningout', // the DOM location to insert the component
-            function (cmp) {
-              console.log('The component was made!');
-            }
+    <script src="https://trialorgfarmforu138.test9.my.pc-rnd.salesforce.com/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use(
+            'c:LightningOutDependencyApp', // name of the Lightning app
+            function () {
+              // Callback once framework and app loaded
+              $Lightning.createComponent(
+                'c:helloWorld', // top-level component of your app
+                {}, // attributes to set on the component when created
+                'lightningout', // the DOM location to insert the component
+                function (cmp) {
+                  console.log('The component was made!');
+                }
+              );
+            },
+            'https://trialorgfarmforu138.test9.my.pc-rnd.site.com/lightningout' // Site endpoint
           );
-        },
-        'https://trialorgfarmforu138.test9.my.pc-rnd.site.com/lightningout' // Site endpoint
-      );
     </script>
   </body>
 </html>
